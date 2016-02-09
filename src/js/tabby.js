@@ -257,15 +257,15 @@
 	tabby.toggleTab = function ( toggle, tabID, options ) {
 
 		// Selectors and variables
-		var settings = extend( settings || defaults, options || {} );  // Merge user options with defaults
+		var localSettings = extend( settings || defaults, options || {} );  // Merge user options with defaults
 		var tabs = document.querySelectorAll(tabID); // Get tab content
 
 		// Toggle visibility of the toggles and tabs
-		toggleToggles(toggle, settings);
-		toggleTabs( tabID, settings );
+		toggleToggles(toggle, localSettings);
+		toggleTabs( tabID, localSettings );
 
 		// Run callbacks after toggling tab
-		settings.callback( toggle, tabID );
+		localSettings.callback( toggle, tabID );
 
 	};
 
